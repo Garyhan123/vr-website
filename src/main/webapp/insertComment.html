@@ -1,0 +1,25 @@
+<?php
+
+$mysqli=new mysqli();
+$mysqli->connect('localhost','root','');
+$mysqli->select_db('wikihorse');
+$mysqli->set_charset("UTF8");
+
+$username=$_GET['username'];
+$blog=$_GET['blog'];
+$comment=$_GET['comment'];
+date_default_timezone_set("Asia/Shanghai");
+$time=date("Y-m-d H:i:s");
+
+
+$sql ="insert into comment(blog,username,content,time)
+values('$blog','$username','$comment','$time')";
+
+$result = $mysqli->query($sql);
+
+
+?>
+
+
+
+

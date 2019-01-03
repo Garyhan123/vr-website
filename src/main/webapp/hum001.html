@@ -1,0 +1,389 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <link rel="stylesheet" type="text/css" href="css/disease.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+		GET("pageName=About%20Us&sort=1", function(result){
+			var title = result['title'].split("|"),
+				cnContent = result['cnContent'],
+				cnContent = cnContent.replace(/\r\n/g,"<br>"),
+				enContent = result['enContent'],
+				enContent = enContent.replace(/\r\n/g,"<br>");
+			var cnTitle = title[1],
+				enTitle = title[0];
+			$(".about-us h1").attr("data-cn", cnTitle);
+			$(".about-us h1").attr("data-en", enTitle);
+//			$(".about-us h1").html(cnTitle);
+			
+			$(".about-us .desc").attr("data-cn", cnContent);
+			$(".about-us .desc").attr("data-en", enContent);
+			var language = sessionStorage.getItem("language");
+			if(language == "en"){
+				$(".about-us h1").html(enTitle);
+				$(".about-us .desc").html(enContent);
+				
+			}else{
+				$(".about-us h1").html(cnTitle);
+				$(".about-us .desc").html(cnContent);
+			}
+		});
+	});
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	               
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+<div class="hum">
+	<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h1><span lang=EN-US>Humanities and Virtual Reality: A Completely Virtual
+Museum</span></h1>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>September 07, 2017 </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'><img width=300 height=169 id="图片 1"
+src="image/image001.png"></span></p>
+
+<p><em><span lang=EN-US>This is part 1 of a 5-part series on virtual reality in
+humanities. This article series explores the trends and use cases of how
+universities are utilizing VR and visualization to further explore research and
+public engagement opportunities in the humanities.</span></em></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>A public reception at a nearby art gallery is featuring a
+Mesoamerican vase from pre-Columbian times. That evening, local patrons and
+students enter the art gallery quietly. They scan the supplementary materials
+about the region and the era displayed on the wall’s large screens and from
+printed handouts. Attendees round the corner, and there sits the vase. Each
+patron patiently waits their turn, then dons 3D glasses before approaching the
+historical artifact within the <a
+href="https://www.mechdyne.com/hardware.aspx?name=CAVE">CAVE</a>. In turn, each
+individual is amazed at the vase’s detail and realism before stepping out of
+the CAVE and passing the glasses to the next guest in line.</span></p>
+
+<p><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span lang=EN-US>The Value of Artifacts: The Replica vs. The Original</span></h2>
+
+<p><span lang=EN-US>Traditional museums showcase historical and priceless
+artifacts behind glass cases. But for the University of Wyoming, a new type of
+museum experience has become familiar. Three years ago, Dr. Mary Katherine
+Scott, the acting director for international programs and visiting assistant
+professor in art history, saw a radical chance to make history come alive with <a
+href="https://www.mechdyne.com/article.aspx?id=273">the use of virtual reality</a>
+within the CAVE at the university’s Shell 3-D Visualization Center.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
+ style='background:#D8D8D8'>
+ <tr>
+  <td width=556 style='width:416.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><strong><span lang=EN-US>“Archeology
+  and art history are changing as disciplines. But combining them with
+  visualization is proving to be a really powerful way to study the past.” -
+  Dr. Mary Katherine Scott</span></strong></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>Dr. Scott’s practical studies began over a decade ago in
+Yucatán, Mexico, to research the past and present of Maya art, architecture,
+and culture of the Maya. Much of her research has focused on the objects made
+by local artisans for sale to tourists within Yucatán’s art markets. Tourists
+want high-quality art pieces that mimic the imagery they see at historical
+sites, yet do not value the products as highly as the originals. This is a
+result of an individual’s “value system,” or placing differing values on
+replications versus the original itself.&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>“I wanted to understand why does the tourist not value the
+replica &#8211; which can cost thousands of dollars &#8211; as highly as the original it’s
+based on,” Scott explained. “It’s still handmade by immensely talented local
+artisans in the traditional way. So, where’s the disconnect?”</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>Dr. Scott took to the University of Wyoming to expand her
+research on value systems. Building off the idea of replicas in tourist art
+markets, how would a reproduced or virtual object stack up against an authentic
+item in an individual’s value system? To test her idea, she hosted one of the
+most unique experiments in the virtual world and uncovered significant
+implications in the field of humanities.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span lang=EN-US>Experimenting with Value Systems &amp; VR</span></h2>
+
+<p style='margin-bottom:12.0pt'><span lang=EN-US>At the Art Institute of
+Chicago, visitors can find an eighth-century Mayan vase known as the Vase of
+the Seven Gods, made in the Naranjo region of Guatemala. Such vases were prized
+possessions of the nobility, made by the finest artists of classic Maya society.
+Because Scott’s research explores the negotiation of meaning and value between
+replicas and originals, she worked with a group of interns to meticulously
+design a 3D replica of the vase. The visualization is based on a nearly exact
+replica made by a contemporary Maya artisan in the Yucatán instead of the
+original itself.<br>
+<br>
+“If we’re really thinking about authenticity as the basis for a person’s
+understanding of value, then why not use another a replica, or another
+simulation of this replica to test how people perceive authenticity?” questions
+Scott. “And if we’re already trying to determine how people judge authenticity,
+in this case the authenticity of the experience with the object, let’s judge it
+in the CAVE.” <br>
+<br>
+<img border=0 width=300 height=225 id="图片 2" src="image/image002.png"><br>Once
+the vase was completely recreated in the CAVE, Scott established the parameters
+of her experiment. She presented it like a formal art reception, inviting the
+public to come view a Mesoamerican artifact at the Shell 3-D Visualization
+Center. At the start of the event, supplemental display materials and media
+described the history of the vase, the region, and its contemporary context to
+the audience, but she avoided giving any clues about how it would be presented.<br>
+<br>
+“I didn’t tell them what they were expected to do or how they would see the
+vase,” explains Scott. “The most interesting thing was to see how the first few
+people reacted to the space, because it was at the same familiar and completely
+different from anything they had experienced before.”<br>
+<br>
+Upon entering the CAVE, the first few brave patrons were stunned by how real
+the vase looked. Viewers stuck close to the walls of the CAVE, keeping their
+hands behind their back at a safe distance just as they might in a traditional
+gallery setting. Then after a few visitors, the experience began to change. <br>
+<br>
+“Eventually, someone will try to touch it,” says Scott. “You really can’t tell
+it isn’t an object that’s right there in front of you. When their hand goes
+through the simulation, you can almost see them thinking, ‘Oh yeah, this is
+virtual. It’s not really there.’”<br>
+<br>
+In the second phase of the experiment a year later, Scott incorporated a new
+variable commonly found in traditional museums with high-value collections: if
+someone came too close to the vase, an alarm sounded and a red warning light
+began to flash. Most participants took a step back to keep their distance, but
+a few individuals continued to push into the simulation. Finally, Scott added
+the last element to her experiment. This time, when a participant ignored the
+warning alarms and reached out to touch the vase, it tipped over and shattered
+on the floor. </span></p>
+
+<h2><span lang=EN-US>Recreating What Was Lost</span></h2>
+
+<p><span lang=EN-US>Art doesn’t last forever. Throughout history, art has
+always been at risk of destruction. Bombings throughout the world in the last
+century have destroyed sculptures, paintings, and other artifacts thousands of
+years old. Beyond that, art is made of organic materials that decay through
+natural disasters and the passage of time. 3D visualization offers another
+method of preserving priceless artifacts from the past.</span></p>
+
+<p><span lang=EN-US>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
+ style='background:#D8D8D8'>
+ <tr>
+  <td width=556 style='width:416.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><strong><span lang=EN-US>“Objects
+  play a hugely important role in human history, it’s how we strive to
+  understand our world,” says Scott. “The impact 3D visualization has for
+  conservationists, art historians, and archeologists is incredible. It offers
+  one way to study historical sites and artifacts from a safe distance that is
+  sensitive to their longer-term preservation.”</span></strong></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>It’s not just virtual reality on its own that provides a
+way to preserve our history. Combining visualization with other technologies,
+such as laser measurements or heat photography, are all building blocks to
+understanding and recreating our past.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>“We can rebuild an entire archeological site,” explains
+Scott. “We can take extremely high-quality photographs and preserve them in the
+virtual world.”</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>The question of placing value on recreations raises a
+greater implication for the humanities and the arts. The sting of losing
+historical artifacts lessens if individuals can learn to value reconstructions
+or recreations as highly as the original. Experiencing historical sites and
+artifacts in virtual reality provides a new way to have an intimate and
+significant experience with the most priceless artifacts from anywhere in the
+world.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span lang=EN-US>Creating an Authentic Experience with Virtual Reality</span></h2>
+
+<p><span lang=EN-US>Artifacts and experiences in VR are more real than they
+seem. When the virtual Mesoamerican vase shatters, patrons clearly consider the
+virtual experience to be authentic.&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>“The individuals who shatter the vase feel so bad if they
+break it,” says Scott. “There is a strong emotional attachment to the
+experience, and ultimately to the simulated object. This is an authentic
+experience because patrons can interact with the object in such an intimate
+way, much more so they can do in a physical gallery setting.”</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>Dr. Scott’s experimental practices over the last three
+years have led her to using virtual reality as a new way to teach art history.
+“There are lots of reasons why the CAVE is such an innovative and valuable
+tool,” says Scott. “You just don’t have the same experiences looking at flat
+photographs of objects in a textbook.”</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p><span lang=EN-US>Learn more about Mary Katherine Scott’s <a
+href="http://www.uwyo.edu/modlang/people/faculty-bios/mary-katherine-scott.html"
+target="https://www.mechdyne.com/_blank">research</a>. <a
+href="https://www.mechdyne.com/case-study.aspx?name=University+of+Wyoming">Learn
+more</a> about the <a
+href="https://www.mechdyne.com/article.aspx?id=272&amp;name=Visualization+at+the+University+of+Wyoming:++Immersion,+Manipulation,+and+Experience">Shell
+3-D Visualization Center</a>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My future classroom</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	</head>
+	<script src="jQuery/jquery-3.2.1.min.js" type="text/javascript">
+		
+	</script>
+	<body>
+		<h1 class="text-center">后台管理</h1>
+		<!--pageName  必传
+sort 必传
+title 选传
+enContent 选传
+cnContent 选传
+picUrl 选传-->
+		<form action="http://www.myfutureclassroom.xyz/vr/article/updateArticle" 
+			method="post"
+			class="form-horizontal">
+			
+			<div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">pageName</label>
+			    <div class="col-sm-10">
+			      <input type="text"
+			      	 class="form-control" 
+			      	 name="pageName"
+			      	 required
+			      	  placeholder="请输入pageName，必传">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">sort</label>
+			    <div class="col-sm-10">
+			      <input type="number" 
+			      	class="form-control"
+			      	required
+			      	name="sort"
+			      	placeholder="请输入sort，必传">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">title</label>
+			    <div class="col-sm-10">
+			      <input type="title" 
+			      	class="form-control"
+			      	name="title"
+			      	placeholder="请输入title，格式如下 ：英文|中文">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">cnContent</label>
+			    <div class="col-sm-10">
+			      <textarea type="title" 
+			      	class="form-control"
+			      	name = "cnContent"
+			      	placeholder="请输入cnContent,语言为中文简体,直接换行即可"></textarea>
+			      	
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">enContent</label>
+			    <div class="col-sm-10">
+			      <textarea type="title" 
+			      	class="form-control"
+			      	name = "enContent"
+			      	placeholder="请输入enContent,语言为英语,直接换行即可"></textarea>
+			      	
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">picUrl</label>
+			    <div class="col-sm-10">
+			      <input type="number" 
+			      	class="form-control"
+			      	name="picUrl"
+			      	placeholder="请输入picUrl，多个图片地址使用英文的','分割">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-primary">提交</button>
+			    </div>
+			  </div>
+		</form>
+	</body>
+</html>

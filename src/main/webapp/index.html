@@ -1,0 +1,349 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+   <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+//		GET("pageName=About%20Us&sort=1", function(result){
+//			var title = result['title'].split("|"),
+//				cnContent = result['cnContent'].replace(/\r\n/g,"<br>"),
+//				enContent = result['enContent'].replace(/\r\n/g,"<br>");
+//			var cnTitle = title[1],
+//				enTitle = title[0];
+//			$(".right-desc p:eq(0)").attr("data-cn", cnTitle);
+//			$(".right-desc p:eq(0)").attr("data-en", enTitle);
+//			
+//			
+//			$(".right-desc p:eq(1)").attr("data-cn", cnContent);
+//			$(".right-desc p:eq(1)").attr("data-en", enContent);
+//			var language = sessionStorage.getItem("language");
+//			if(!language){
+//				language = "en";
+//				sessionStorage.setItem("language", "en");
+//			}
+//			if(language == "en"){
+//				$(".right-desc p:eq(0)").html( enTitle);
+//				$(".right-desc p:eq(1)").html( enContent);
+//			}else{
+//				$(".right-desc p:eq(0)").html( cnTitle);
+//				$(".right-desc p:eq(1)").html( cnContent);
+//			}
+//			
+//		});
+		
+		//获取AR
+//		GET("pageName=what is VR, AR, MR&sort=1", function(result){
+//			$("#whatIs .content_list_img img").attr("src", result['picUrl']);
+//			fillData("#whatIs ul li:eq(0) a", result, true);
+//		});
+//			//VR
+//		GET("pageName=what is VR, AR, MR&sort=2", function(result){
+//			fillData("#whatIs ul li:eq(1) a", result, true);
+//		});
+//		//MR
+//		GET("pageName=what is VR, AR, MR&sort=3", function(result){
+//			fillData("#whatIs ul li:eq(2) a", result, true);
+//		});
+		
+		
+		//VR具体应用
+//		GET("pageName=VR ART&sort=1", function(result){
+//			
+//			
+//			fillData("#vr ul li:eq(0) a", result);
+//		});
+//		GET("pageName=VR ART&sort=2", function(result){
+//			var picUrl = result['picUrl'].split(",")[0];
+//			$("#vr .content_list_img img").attr("src", picUrl);
+//			fillData("#vr ul li:eq(1) a", result);
+//		});
+//		GET("pageName=VR ART&sort=3", function(result){
+//			fillData("#vr ul li:eq(2) a", result);
+//		});
+//		GET("pageName=VR ART&sort=4", function(result){
+//			fillData("#vr ul li:eq(3) a", result);
+//		});
+//		GET("pageName=VR ART&sort=5", function(result){
+//			fillData("#vr ul li:eq(4) a", result);
+//		});
+//		
+		
+		
+		
+		//share
+//		GET("pageName=SHARING VR&sort=1", function(result){
+//			fillData2("#share ul li:nth-child(1)", result);
+//		});
+//		GET("pageName=SHARING VR&sort=2", function(result){
+//			fillData2("#share ul li:nth-child(2)", result);
+//		});
+//		GET("pageName=SHARING VR&sort=3", function(result){
+//			fillData2("#share ul li:nth-child(3)", result);
+//		});
+//		GET("pageName=SHARING VR&sort=4", function(result){
+//			fillData2("#share ul li:nth-child(4) ", result);
+//		});
+//		GET("pageName=SHARING VR&sort=5", function(result){
+//			fillData2("#share ul li:nth-child(5) ", result);
+//		});
+	});
+//	function fillData(id, result, flag){
+//		var title = result['title'].split("|");
+//		var enTitle = title[0],
+//			cnTitle = title[1];
+//		if(flag){
+//			enTitle = "what is "+enTitle;
+//			cnTitle = "什么是"+cnTitle
+//		}
+//		$(id).attr("data-en", enTitle);
+//		$(id).attr("data-cn", cnTitle);
+//		var language = sessionStorage.getItem("language");
+//		if(language == "en"){
+//			$(id).html(enTitle);
+//			
+//		}else{
+//			$(id).html(cnTitle);
+//			
+//		}
+//	}
+//	function fillData2(dom, result){
+//		var picUrl = result['picUrl'].split(",")[0],
+//			title = result['title'].split("|");
+//		var cnTitle = title[1],
+//			enTitle = title[0];
+//		$(dom + " img").attr("src", picUrl);
+//		$(dom + " p").attr("data-cn", cnTitle);
+//		$(dom + " p").attr("data-en", enTitle);
+//		
+//		var language = sessionStorage.getItem("language");
+//			if(language == "en"){
+//				$(dom + " p").html(enTitle);
+//			}else{
+//				$(dom + " p").html(cnTitle);
+//			}
+//	}
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+<div class="home_stuff index">
+	<!--<div class="about-us">-->
+		<!--<div class="content">-->
+			<!--<h1 style="text-align: left;">Welcome to oasis, <br>&nbsp;&nbsp;&nbsp;where the only limitation is our imagination. </h1>
+			<div class="desc"></div>-->
+		<!--</div>-->
+	<!--</div>-->
+	
+	<!--<div class="iframe_box">
+	    <div style="text-align: center;clear:both"></div>
+	<iframe frameborder="0" scrolling="no" src="slider/index2.html" width="100%"height="450px"align="middle"></iframe>
+	
+	</div>-->
+</div>
+<div class="clearfix" style="width: 1200px;margin: 30px auto;">
+	<div class="pull-left" style="width: 600px;">
+		<video width="600" height="600" src="video/index.mp4" controls="">
+			当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+		</video>
+	</div>
+	<div class="pull-left right-desc" 
+		style="margin-left: 30px;width: 
+		570px;height: 600px;background: #3c5194;
+		color: #fff;padding: 15px;
+		padding-bottom: 0;box-sizing: border-box;">
+		<p class="text-center" style="font-size: 24px;"
+			>
+			Why my future classroom?
+		</p>
+		<p style="font-size:14pt;">
+			Since I was a kid, I always like gaming and I wondered more than once why studying is not as interesting as gaming？ 
+<br><br>
+Until one day I got my first VR headset and it's like entering another word.
+In this world, 
+you can see places you haven't been to ;<br>
+you can look through the complexities of science;<br>
+you can create things without limit,<br>
+like using tilt brush and medium to make 3D sculptures then 3d print them.
+<br><br>
+I can't wait to share it with my friends and classmates. It Really enlightens my imagination and open my vision to a bigger world.<br>
+Also it makes me think about educational equality, as people who got limited access to modern tools can now have another choice.
+<br><br>
+Welcome to my future classroom！
+		</p>
+	</div>
+</div>
+<div class="home-stuff">
+	<div class="row1">
+	    <div class="history_box">
+	        <div class="history">
+	            <h3
+	            	data-cn="what is VR,AR,MR"
+	        		data-en="what is VR,AR,MR">VR,AR,MR</h3>
+	            <div class="content_list" id="whatIs">
+	                <div class="content_list_img"><img src="image/VR.jpg"></div>
+	                <div class="content_list_article" style="margin-top: 45px;">
+	                    <ul>
+	                        <li><img src="image/arrow.png"/><a href='art.html'>VR</a></li>
+	                        <li><img src="image/arrow.png"/><a href='Science.html'>AR</a></li>
+	                        <li><img src="image/arrow.png"/><a href='VR humanity.html'>MR</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	
+	    <!--<div class="blog">
+	        <h3
+	        	data-cn="VR Explorations"
+	        	data-en="VR Explorations">VR Explorations</h3>
+	        <div class="blog_article" id="share">
+	            <ul>
+	                <li><a href='share1.html'><img src=""/><p></p></a></li>
+	                <li><a href='share2.html'><img src=""/><p></p></a></li>-->
+	                <!--<li><a href='share3.html'><img src=""/><p></p></a></li>-->
+	            <!--</ul>
+	        </div>
+	    </div>-->
+	</div>
+	<div class="row2">
+	    <div class="history_box">
+	        <div class="care">
+	            <h3
+	            	data-cn="VR application in Education"
+	        		data-en="VR application in Education">VR application in Education</h3>
+	            <div class="content_list" id="whatIs">
+	                <div class="content_list_img"><img src="art.files/image001.jpg"></div>
+	                <div class="content_list_article" style="margin-top: 45px;">
+	                    <ul>
+	                        <li><img src="image/arrow.png"/><a href='art.html'>VR art</a></li>
+	                        <li><img src="image/arrow.png"/><a href='Science.html'>VR science</a></li>
+	                        <li><img src="image/arrow.png"/><a href='VR humanity.html'>VR humanity</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+
+</body>
+
+
+</html>

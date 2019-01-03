@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>My future classroom</title>
+  <link rel="stylesheet" type="text/css" href="css/game.css">
+  <style>
+    #game_div {
+      width: 400px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    body{
+      background-color:#EEE9E9;
+    }
+    .style1{
+      text-align:center;
+    margin-top: 20px;
+      font-size:24px;
+      font-weight:bold;
+    }
+  </style>
+  <script type="text/javascript" src="js/phaser.min.js"></script>
+  <script type="text/javascript" src="js/load.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/ready.js"></script>
+  <script type="text/javascript" src="js/play.js"></script>
+  <script type="text/javascript" src="js/gameover.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
+</head>
+<body>
+
+<!--logo-->
+<div class="logo_box">
+  <div class="logo">
+    <a href='index.html'>My Future Classroom</a>
+  </div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'><a href='index.html'>关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='#'>什么是VR, AR, MR?</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>VR的具体运用</a>
+	            <ul>
+	                <li><a href='feeding.html'>VR艺术</a></li>
+	                <li><a href='tacking.html'>VR科学</a></li>
+	                <li><a href='disease.html'>VR人文</a></li>
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub1'><a href='skill.html'>分享VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='blog.html'>现实生活中的VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='game.html'>联系方式</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>简体中文</a>
+	            <ul>
+	                <li><a href='#'>简体中文</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
+</div>
+
+<div align="center" class="style1">Flappy Horse</div>
+<table width="100%" border="0" align="center">
+  <tr>
+    <td width="40%">
+    </td>
+    <td width="400"><div id="game_div"></div></td>
+    <td width="40%"></td>
+  </tr>
+</table>
+</body>
+</html>

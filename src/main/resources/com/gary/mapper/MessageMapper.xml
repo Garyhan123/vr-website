@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gary.mapper.MessageMapper">
+	<insert id="insertMessage" parameterType="com.gary.entity.Message">
+		INSERT INTO
+		`message`(`id`, `client_name`,
+		`email`, `content`,
+		`create_time`,
+		`update_time`) VALUES (null,
+		#{clientName}, #{email},
+		#{content},
+		#{createTime}, #{updateTime});
+
+	</insert>
+
+	<select id="selectMessageByPage" resultType="com.gary.entity.Message">
+		select
+		id,client_name clientName,email,content,create_time
+		createTime,update_time updateTime from `message` limit
+		${start},${end};
+	</select>
+
+	<select id="selectCountOfMessages" resultType="java.lang.Integer">
+		select count(0)
+		from `message`;
+	</select>
+</mapper>

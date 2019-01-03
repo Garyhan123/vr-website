@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>My future classroom</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+	</head>
+	<style type="text/css">
+		#rtn{
+			margin: 20px;
+		}
+	</style>
+	<body>
+		<table id="messages" lay-filter="messages"></table>
+		<a href="manager.html" class="layui-btn" id="rtn">返回编辑</a>
+	</body>
+
+	<script src="layui/layui.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="properties.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			//动态表格
+			layui.table.render({
+				elem: '#messages',
+				url: netPath+'/message/messageList',
+				page: true,
+				cols: [
+					[{
+						field: 'id',
+						title: 'ID',
+						width: 80,
+						sort: true,
+						fixed: 'left'
+					}, {
+						field: 'clientName',
+						title: '用户姓名',
+						fixed: 'center',
+						width: 180
+					}, {
+						field: 'email',
+						title: '用户联系方式(邮箱)',
+						fixed: 'center',
+						width: 180
+					}, {
+						field: 'createTime',
+						title: '留言时间',
+						fixed: 'center',
+						width: 200,
+						templet: function(d) {
+							return new Date(d.createTime).toLocaleString().replace(/:\d{1,2}$/, '')
+						}
+					}, {
+						field: 'content',
+						title: '留言内容',
+						fixed: 'center'
+					}]
+				]
+			});
+		});
+	</script>
+
+</html>

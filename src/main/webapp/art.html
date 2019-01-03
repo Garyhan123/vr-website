@@ -1,0 +1,256 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+		GET("pageName=About%20Us&sort=1", function(result){
+			var title = result['title'].split("|"),
+				cnContent = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result['cnContent'].replace(/\r\n/g,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"),
+				enContent = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result['enContent'].replace(/\r\n/g,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+			var cnTitle = title[1],
+				enTitle = title[0];
+			$(".right-desc p:eq(0)").attr("data-cn", cnTitle);
+			$(".right-desc p:eq(0)").attr("data-en", enTitle);
+			
+			
+			$(".right-desc p:eq(1)").attr("data-cn", cnContent);
+			$(".right-desc p:eq(1)").attr("data-en", enContent);
+			
+			var language = sessionStorage.getItem("language");
+			if(language == "en"){
+				$(".right-desc p:eq(0)").html( enTitle);
+				$(".right-desc p:eq(1)").html( enContent);
+			}else{
+				$(".right-desc p:eq(0)").html( cnTitle);
+				$(".right-desc p:eq(1)").html( cnContent);
+			}
+			
+		});
+		
+	});
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	               
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+<div class="home_stuff">
+	<div class="about-us">
+		<div class="content">
+			<!--<h1 style="text-align: left;">Welcome to oasis, <br>&nbsp;&nbsp;&nbsp;where the only limitation is our imagination. </h1>
+			<div class="desc"></div>-->
+		</div>
+	</div>
+<div style="width: 1200px;margin: 30px auto;">
+	<div lang=ZH-CN link=blue vlink="#954F72" style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:45.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+19pt;font-family:Roboto;'>Masterworks: Journey Through History
+Provides A Transformative Educational VR Experience</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;background:white;
+vertical-align:baseline'><b><i><span lang=EN-US style='font-size:13.5pt;
+font-family:Roboto;color:#3C3C3C'>Vive Team&nbsp;&nbsp;&#8226;&nbsp;&nbsp;10.01.18</span></i></b></p>
+<div style="width: 800px;margin: 30px auto;">
+	<p class="text-center">The night Cafe</p>
+	<video width="800" controls="" src="https://media.st.dl.bscstorage.net/steam/apps/256664593/movie480.webm?t=1464799073">
+	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="https://media.st.dl.bscstorage.net/steam/apps/256664593/movie480.webm?t=1464799073">下载视频</a>
+	</video>
+</div>	
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'><a
+href="https://www.viveport.com/apps/1edac723-2fed-4e56-b509-b0b8e796ba81"><span
+style=''>Masterworks: Journey Through History</span></a>&nbsp;is
+an educational VR&nbsp;museum&nbsp;where users can explore four culturally
+significant sites in full roomscale aided by&nbsp;the power of photogrammetry.&nbsp;&nbsp;Developed
+by FarBridge and published by&nbsp;<a href="https://cyark.org/"><span
+style=''>CyArk</span></a>,&nbsp;<a
+href="https://www.viveport.com/apps/1edac723-2fed-4e56-b509-b0b8e796ba81"><span
+style='text-decoration:none'>MasterWorks</span></a>&nbsp;authentically
+transports users to places not easily accessible, and leverages actual
+archaeologists and historians to discuss the significance and meaning of these
+locations and their artifacts.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'>John Ristevski,
+CEO of&nbsp;<a href="https://cyark.org/"><span style='text-decoration:
+none'>CyArk</span></a>, talks about Masterworks and how their first VR
+experience&nbsp;ensures that these places continue to inspire wonder and
+curiosity for years to come.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><i><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'>First off, tell us
+about MasterWorks and what users should expect when they try it out for the
+first time.</span></i></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'>MasterWorks is a
+journey to 4 incredible locations created using fully navigable 3D environments
+created from photogrammetry rather than simply 360 video or hand modeled
+environments.&nbsp; The result is an experience the user can move through in
+real time, exploring every portion of these amazing historic sites.&nbsp; The
+result is an experience unlike anything else, creating a real sense of
+place.&nbsp; This incredible visual experience is made more interactive through
+audio hotspots where you can learn from the people who care for these sites
+about their history and the challenges they face today.&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:24.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'><img border=0
+width=1000 height=667 id="图片 3" src="art.files/image001.jpg"
+alt="https://d201n44z4ifond.cloudfront.net/wp-content/uploads/sites/6/2018/10/01113854/Kesner_Peru_Chavin_045.jpg"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><i><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'>How did you come
+to pick the locations that you did, and what particular significance do they
+have?&nbsp;</span></i></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:24.0pt;
+background:white;vertical-align:baseline'><span lang=EN-US style='font-size:
+13.5pt;font-family:Roboto;color:#3C3C3C;letter-spacing:.5pt'>The four locations
+in MasterWorks represent a diverse range of sites both geographically and
+temporally, spanning almost 3000 years of human history and 3 continents. Users
+can discover the fate of the ancient capital of Thailand, the mysteries of a
+pre-Incan temple in the Peruvian Andes, the astonishing Native American cliff
+dwellings of Colorado, and the monumental stone carvings of Mt Rushmore in
+South Dakota. These are also some of the most visually impressive sites in our
+archive with some especially interesting stories and I think users are going to
+have a great time exploring these places in VR.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;background:white;
+vertical-align:baseline'><span lang=EN-US style='font-size:12.0pt;font-family:
+Roboto;color:#3C3C3C'>
+</div>
+
+</div>
+
+</div>	
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gary.mapper.ArticleMapper">
+	<select id="getArticles" resultType="com.gary.entity.Article">
+		SELECT id ,page_name
+		pageName,sort,title,cn_content cnContent,en_content enContent,pic_url
+		picUrl FROM `article` WHERE page_name = #{pageName} AND sort =#{sort};
+	</select>
+
+	<update id="updateArticles" parameterType="com.gary.entity.Article">
+		update `article`
+		<set>
+			<if test="title != null and title.length()>0">title = #{title},</if>
+			<if test="cnContent != null and cnContent.length()>0">cn_content = #{cnContent},</if>
+			<if test="enContent != null and enContent.length()>0">en_content = #{enContent},</if>
+			<if test="picUrl != null and picUrl.length()>0">pic_url = #{picUrl},</if>
+		</set>
+		WHERE page_name = #{pageName} AND sort =#{sort};
+	</update>
+</mapper>

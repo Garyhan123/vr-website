@@ -1,0 +1,327 @@
+<!DOCTYPE><html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1   " />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+		GET("pageName=About%20Us&sort=1", function(result){
+			var title = result['title'].split("|"),
+				cnContent = result['cnContent'].replace(/\r\n/g,"<br>"),
+				enContent = result['enContent'].replace(/\r\n/g,"<br>");
+			var cnTitle = title[1],
+				enTitle = title[0];
+			$(".about-us h1").attr("data-cn", cnTitle);
+			$(".about-us h1").attr("data-en", enTitle);
+			
+			
+			$(".about-us .desc").attr("data-cn", cnContent);
+			$(".about-us .desc").attr("data-en", enContent);
+			var language = sessionStorage.getItem("language");
+			if(language == "en"){
+				$(".about-us h1").html(enTitle);
+				$(".about-us .desc").html(enContent);
+				
+			}else{
+				$(".about-us h1").html(cnTitle);
+				$(".about-us .desc").html(cnContent);
+			}
+		});
+	});
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	               
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+<div lang=ZH-CN link=blue vlink="#954F72" 
+	class="hum"
+	style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h1 style='mso-pagination:widow-orphan'><span lang=EN-US>The Kremer Museum</span></h1>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>October 27, 2017, NEW YORK &#8211; </span></b><span lang=EN-US>On
+Thursday, October 26, 2017, at an exclusive event at Sotheby’s New York for
+select guests from the art world and technology industry, the <a
+href="http://www.thekremercollection.com/">Kremer Collection</a> announced the
+launch of the Kremer Museum, an innovative new concept that combines
+cutting-edge technology with world-class masterpieces. Designed by architect
+Johan van Lierop, Founder of Architales and Principal at Studio Libeskind, the
+museum will feature over 70 17th Century Dutch and Flemish Old Master paintings
+from the Collection and will be accessible exclusively through Virtual Reality
+(VR) technology.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>For the creation of the
+museum, each painting has been photographed between 2,500 and 3,500 times using
+the ‘photogrammetry’ technique to build one ultra high resolution visual model
+for each painting, allowing the museum’s visitors to enjoy a deeply immersive
+experience with the paintings. Using VR technology, visitors will be able to
+examine the artworks’ surface and colors up-close, as well as view the reverse
+of the paintings to explore each work’s unique stamps of provenance.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Discussing the
+establishment of the Kremer Museum, George Kremer, Founder of the Kremer
+Collection, says, <i style='mso-bidi-font-style:normal'>“Our journey as
+collectors has always been about finding the highest quality artworks and
+simultaneously finding ways to share them with as many people as possible. My
+wife Ilone and I believe we can make a greater contribution to the art world by
+investing in technology rather than in bricks and mortar for our collection.” </i></span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>On designing the
+museum, architect Johan van Lierop notes<i style='mso-bidi-font-style:normal'>,
+“To design a museum without gravity, plumbing or code regulations is a dream
+for every architect.”&nbsp;</i></span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>van Lierop continues,<i
+style='mso-bidi-font-style:normal'> “I think VR is to the 21st century what
+Dutch Realism was for the Golden Age, allowing the observer to escape into an
+alternative reality or mindset. Architecture often uses VR to enhance a
+project’s representation before it is built, often for real estate sales
+purposes, but using VR to embrace architecture as a spatial experience on
+itself was very unique to me. VR opens up a whole new realm for the
+architectural practice, where ideas and concepts are no longer bound to the
+limits of passive visuals but can be a fully immersive experience.”</i></span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>This virtual museum,
+which features meticulously recreated paintings and an exceptional space whose
+design alludes to the scientific and artistic vigor of the Golden Age, will be
+a leap forward in making it truly possible for the public to experience
+masterworks in a museum setting, regardless of background and location.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>George Kremer
+continues, “<i style='mso-bidi-font-style:normal'>The Kremer Museum is a
+combined result of what we appreciate as collectors and art lovers, such as
+perfect lighting, the possibility to look at the back of the paintings, and a
+perfectly designed space by a world-class architect, and the hard work and
+vision of an incredibly committed team of highly talented and innovative
+producers and developers to make this come to life. The final product that Jo&euml;l
+Kremer and his team have innovated pushes all boundaries &#8211; the resolution of
+the visuals is of a higher quality than the human eye can process, the museum
+is ready to scale to the improvements made to the resolution of the hardware in
+the near future, and therefore the experience will only get better and better.”</i></span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>In the coming months,
+the Collection will host a number of exclusive pop-up events with a full VR
+set-up. Dates will be announced on the Kremer Collection’s website in due
+course. In early 2018, the museum will release a mobile application on Google
+Play Store for Daydream that will allow people to visit the museum with any
+Google Daydream-ready smartphone and VR mask.</span></p>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>Mighty Masters</span></b></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>In conjunction with the
+opening of the museum, the Kremer Collection is also launching the TKC Mighty
+Masters program, which will provide VR tools to select schools around the world
+to fully access the museum. To select its first schools, the program will
+partner with India’s <a href="http://www.deliveringchangefoundation.org/">Delivering
+Change Foundation</a> to host a drawing contest among over one million children
+in India. The museum and the Mighty Masters program together demonstrate George
+&amp; Ilone Kremer’s strong commitment to education and the accessibility of
+art and their strong belief in art’s unique capacity to make people, and
+children in particular, feel free and empowered.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Ahead of the roll-out
+of the TKC Mighty Masters program in 2018, on Tuesday, October 24, 2017, a
+first set-up of the Kremer Museum was realized at Cornerstone Academy for
+Social Action in the Bronx, NY, where a group of 20 children were invited to be
+the very first visitors of the museum in the presence of Jo&euml;l Kremer, Director,
+Kremer Collection and Co-Founder, Kremer Museum.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Commenting on this
+experience, Jo&euml;l Kremer says, <i style='mso-bidi-font-style:normal'>“This was a
+truly eye-opening experience for me; the children’s uncensored and
+overwhelmingly positive response to the museum blew me away. To me, the fact
+that they referred to it as a game and their eagerness to learn more about what
+they were looking at illustrated how exciting and interactive the museum is,
+not just to us as builders and founders, but more importantly to our visitors
+and to the future beneficiaries of the Mighty Masters program.”</i> &nbsp;</span></p>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>About the Kremer Collection:</span></b></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Founded in 1994 by
+George and Ilone Kremer, the Kremer Collection is a privately owned group of
+around 74 works of 17th century Dutch and Flemish art. New acquisitions are
+made regularly, and many interesting schools and genres are represented
+throughout the Collection, such as Caravaggism/Utrecht, Leiden, Delft, Haarlem,
+Amsterdam, genre interiors, landscape painting, history painting, Italianate
+art, marines, and portraits. </span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>The Collection contains
+masterpieces by, amongst others, Rembrandt, Abraham Bloemaert, Hendrick ter
+Brugghen, Gerrit Dou, Frans Hals, Meindert Hobbema, Gerrit van Honthorst,
+Pieter de Hooch, Jan Lievens, Paulus Moreelse, Michael Sweerts, Jan Baptist
+Weenix, and Emanuel de Witte.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Over the past 20 years,
+many of the works from the Collection have been on display in a variety of
+exhibitions and on long-term loans with international museums, including: The
+Mauritshuis, The Hague; the National Gallery, London; the National Gallery of
+Art, Washington, D.C.; and the Rijksmuseum, Amsterdam. </span></p>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>About Johan van Lierop:</span></b></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Johan van Lierop,
+Founder of <a href="http://www.architales.com">Architales design studio</a>, is
+an architect and designer based in New York&nbsp;City. Van Lierop relocated to
+New York from Holland in 2004 to join Steven Holl Architects. In the US, he has
+worked on a number of high-profile projects, including the Nelson-Atkins Art
+Museum in Kansas City. Following his tenure with Holl, van Lierop went on to
+become a key member of the Guggenheim Museum project in Guadalajara, Mexico
+with Ten Arquitectos. He is currently the Principal at Studio Libeskind, where
+he is privileged to work on esteemed projects such as the Kurdistan Museum in
+Erbil, Iraq and the Modern Industrial Museum in Wuhan, China among others.</span></p>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>About the Developers:</span></b></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Jo&euml;l Kremer, who
+previously held positions at Google among others, is the current Director of
+the Kremer Collection and Co-Founder of the Kremer Museum. To investigate the
+possibilities and potential of building the ultimate virtual museum, he partnered
+with <a href="http://moyosamedia.com/">Moyosa</a>’s Jaap Kooiker and Maikel
+Sibbald, pioneering experts in developing Virtual Reality and Augmented Reality
+experiences.</span></p>
+
+<p style='mso-pagination:widow-orphan'><span lang=EN-US>Join the conversation
+on social media by mentioning <b style='mso-bidi-font-weight:normal'>The Kremer
+Collection</b> and using the hashtags #KremerCollection, #KremerMuseum,
+#MightyMasters, #Sothebys, and #MuseumNetwork when posting. </span></p>
+
+<p style='mso-pagination:widow-orphan'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>Facebook</span></b><span lang=EN-US>:&nbsp;<a
+href="https://www.facebook.com/thekremercollection/">The Kremer Collection</a>
+|&nbsp;<b style='mso-bidi-font-weight:normal'>Instagram:&nbsp;</b>@<a
+href="https://www.instagram.com/thekremercollection/">thekremercollection</a>&nbsp;|&nbsp;<b
+style='mso-bidi-font-weight:normal'>Twitter:&nbsp;</b>@<a
+href="https://twitter.com/KremerCollexion">kremercollexion</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</div>
+
+
+</body>
+
+
+</html>

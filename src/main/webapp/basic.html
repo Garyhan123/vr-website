@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script>
+        function show(num)
+        {
+            $('.tips'+num).fadeIn();
+        }
+        function out(num)
+        {
+            $('.tips'+num).fadeOut();
+        }
+    </script>
+</head>
+
+<body>
+
+<!--logo-->
+<div class="logo_box">
+    <div class="logo">
+        <a href='index.html'>
+        	My Future Classroom
+        </a>
+    </div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'><a href='index.html'>关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='#'>什么是VR, AR, MR?</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>VR的具体运用</a>
+	            <ul>
+	                <li><a href='feeding.html'>VR艺术</a></li>
+	                <li><a href='tacking.html'>VR科学</a></li>
+	                <li><a href='disease.html'>VR人文</a></li>
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub1'><a href='skill.html'>分享VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='blog.html'>现实生活中的VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='game.html'>联系方式</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>简体中文</a>
+	            <ul>
+	                <li><a href='#'>简体中文</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
+</div>
+<div class="container">
+
+    <div class="container_box">
+        <!--title-->
+
+        <div class="title_box">
+            <div class="title">
+                <h4>Horse Part</h4>
+            </div>
+        </div>
+
+        <div class="content_box">
+            <p style="text-align: center;margin-bottom: 30px;">Click the body parts to know more</p>
+            <div class="img_tips">
+                <img src="image/basic/1.png" usemap="#planetmap" width="700px;"/>
+                <div class="tips1"><b>Forehead:</b> The part of the face above the eyes on a horse.</div>
+                <div class="tips2"><b>Crest:</b>The upper part of the neck on a horse where the mane grows.</div>
+                <div class="tips3"><b>Back:</b>Begins at the end of the withers and is where a saddle sits on a horse.</div>
+                <div class="tips4"><b>Croup:</b>The highest part of the rump or buttocks of the horse.</div>
+                <div class="tips5"><b>Dock:</b>The fleshy top part of the horse's tail.</div>
+                <div class="tips6"><b>Thigh:</b>The area between the hips and the knees.</div>
+                <div class="tips7"><b>Gaskin:</b>The area on the hind leg of a horse between the stifle and hock.</div>
+                <div class="tips8"><b>Hock:</b>The joint on the hind leg of a horse that acts like a human ankle.</div>
+                <div class="tips9"><b>Hoof:</b>The foot of the horse or the part of the foot that touches the ground.</div>
+                <div class="tips10"><b>Cannon:</b>The area on the horse between the hock and the fetlock, sometimes called a cannon bone since there is a type of horse bit called a cannon.</div>
+                <div class="tips11"><b>Barrel:</b>The middle of a horse where the ribcage is.</div>
+                <div class="tips12"><b>Pastern:</b>The part of a horse between a fetlock and a hoof.</div>
+                <div class="tips13"><b>Fetlock:</b>Sometimes called a horse's ankle, the fetlock is actually more like the ball of the foot on humans.</div>
+                <div class="tips14"><b>Forearm:</b>The area on the front legs of a horse between the knee and the elbow.</div>
+                <div class="tips15"><b>Knee:</b>On the front legs of a horse, the part that does the same thing as a knee on a human.</div>
+                <div class="tips16"><b>Shoulder:</b> The area on a horse that is close to where the human shoulder would be.</div>
+                <div class="tips17"><b>Chest:</b>An ideal chest is deep and contains the space necessary for vital organs.</div>
+                <div class="tips18"><b>Muzzle:</b>The part of the head that comes out of a horse's face including the jaw, mouth and nose.</div>
+                <div class="tips19"><b>Cheek:</b>The area of the face below the eyes and between the nose and the left or right ear.</div>
+            </div>
+            <map name="planetmap" id="CribMap">
+                <area shape="rect" coords="29,85,113,104" onmousemove="show(1)" onmouseout="out(1)"/>
+                <area shape="rect" coords="328,70,382,87" onmousemove="show(2)" onmouseout="out(2)"/>
+                <area shape="rect" coords="393,126,433,142" onmousemove="show(3)" onmouseout="out(3)"/>
+                <area shape="rect" coords="522,125,564,142" onmousemove="show(4)" onmouseout="out(4)"/>
+                <area shape="rect" coords="606,158,648,170" onmousemove="show(5)" onmouseout="out(5)"/>
+                <area shape="rect" coords="600,229,647,246" onmousemove="show(6)" onmouseout="out(6)"/>
+                <area shape="rect" coords="599,318,653,333" onmousemove="show(7)" onmouseout="out(7)"/>
+                <area shape="rect" coords="598,357,642,374" onmousemove="show(8)" onmouseout="out(8)"/>
+                <area shape="rect" coords="558,457,598,477" onmousemove="show(9)" onmouseout="out(9)"/>
+                <area shape="rect" coords="431,378,488,399" onmousemove="show(10)" onmouseout="out(10)"/>
+                <area shape="rect" coords="361,318,414,334" onmousemove="show(11)" onmouseout="out(11)"/>
+                <area shape="rect" coords="321,452,383,469" onmousemove="show(12)" onmouseout="out(12)"/>
+                <area shape="rect" coords="209,436,274,454" onmousemove="show(13)" onmouseout="out(13)"/>
+                <area shape="rect" coords="167,357,238,370" onmousemove="show(14)" onmouseout="out(14)"/>
+                <area shape="rect" coords="177,316,216,330" onmousemove="show(15)" onmouseout="out(15)"/>
+                <area shape="rect" coords="177,268,251,284" onmousemove="show(16)" onmouseout="out(16)"/>
+                <area shape="rect" coords="176,235,225,251" onmousemove="show(17)" onmouseout="out(17)"/>
+                <area shape="rect" coords="80,220,143,236" onmousemove="show(18)" onmouseout="out(18)"/>
+                <area shape="rect" coords="81,272,132,295" onmousemove="show(19)" onmouseout="out(19)"/>
+            </map>
+        </div>
+
+
+        <p style="font-size:12px;color:gray;text-align: center;">From: https://www.habitatforhorses.org/kidscorral/vocabulary_I.html</p>
+    </div>
+</div>
+
+
+</body>
+</html>

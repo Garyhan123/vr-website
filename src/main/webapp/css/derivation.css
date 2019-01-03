@@ -1,0 +1,187 @@
+.title
+{
+    height: 25px;
+    width: 1200px;
+    border-bottom: 1px solid lightgray
+}
+.logo a{
+	color: #333;
+	line-height: 99px;
+	font-size: 30px;
+	padding-left: 15px;
+}
+a{
+	text-decoration: none;
+}
+h4
+{
+    background-color: lightgray;
+    width: 200px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.container
+{
+    width: 100%;
+    margin-top: 35px;
+}
+.container_box
+{
+    width: 1200px;
+    margin: 0 auto;
+}
+.content1,.content2,.content3,.content4,.content5
+{
+    margin: 0 50px;
+}
+.content1_box,.content2_box,.content3_box,.content4_box,.content5_box
+{
+    width: 1050px;
+    margin:50px auto;
+    position: relative;
+}
+.content1_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content1_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content1_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.title_box
+{
+    height: 50px;
+}
+h2
+{
+    margin-top: 60px;
+    text-align: center;
+    color: #3c5194;
+}
+body
+{
+    background-color: #EEE9E9;
+    margin-left:0;
+    margin-right:0;
+}
+.content1_left p span
+{
+    font-size: 40px;
+}
+
+.content2_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content2_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content2_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content2_right p span
+{
+    font-size: 40px;
+}
+
+.content3_left
+{
+    line-height: 35px;
+    width: 500px;
+    float: left;
+}
+.content3_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content3_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content3_left p span
+{
+    font-size: 40px;
+}
+
+.content4_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content4_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content4_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content4_right p span
+{
+    font-size: 40px;
+}
+.content5_left
+{
+    line-height: 35px;
+    width: 500px;
+    float: left;
+}
+.content5_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content5_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content5_left p span
+{
+    font-size: 40px;
+}
+

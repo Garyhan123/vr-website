@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <link rel="stylesheet" type="text/css" href="css/blog3.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<script type="text/javascript">
+
+    <?php
+    $mysqli = new mysqli();
+    $mysqli->connect('localhost', 'root', '');
+    $mysqli->select_db('wikihorse');
+    $mysqli->set_charset("UTF8");
+
+    $sql = " select * from comment where blog='blog3' ";//修改blog
+    $result = $mysqli->query($sql);
+    $username = array();
+    $comment = array();
+    $time = array();
+    $commentNum = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+        $username[] = $row['username'];
+        $comment[] = $row['content'];
+        $time[] = $row['time'];
+        $commentNum++;
+    }
+    $usernameJson = json_encode($username);
+    $commentJson = json_encode($comment);
+    $timeJson = json_encode($time);
+    $commentNumJson = json_encode($commentNum);
+    ?>
+
+    username_json = <?php echo $usernameJson;?>;
+    comment_json = <?php echo $commentJson;?>;
+    time_json = <?php echo $timeJson;?>;
+    commentNum =<?php echo $commentNum;?>;
+
+    $(
+        function () {
+
+            $('.comment_num').text("COMMENT("+commentNum+")");
+            for(var i=0;i<commentNum;i++) {
+                $('.comment_box').append('<div class="comment_list">' +
+                    '<div class="comment_name">@'+username_json[i]+':</div><br/>' +
+                    '<div class="comment_detail">'+comment_json[i]+'</div><br/>' +
+                    '<div class="comment_time">'+time_json[i]+'</div>' +
+                    '</div><div class="comment_line"></div>');
+            }
+        }
+    );
+
+
+    function sendClick() {
+        if ($('.username').val() == "" || $('.comment').val() == "")
+            alert("Username or comment can not be empty");
+        else {
+            $.ajax({
+                type: 'GET',
+                url: "insertComment.html",
+                data: {
+                    username: $('.username').val(),
+                    comment: $('.comment').val(),
+                    blog: "blog3"//修改blog
+                }
+            });
+
+            alert("Comment Success");
+            window.location.reload();
+            $('.username').val("");
+            $('.comment').val("");
+        }
+
+    }
+
+</script>
+<body>
+<!--logo-->
+<div class="logo_box">
+    <div class="logo">
+        <a href='index.html'>My Future Classroom</a>
+    </div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'><a href='index.html'>关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='#'>什么是VR, AR, MR?</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>VR的具体运用</a>
+	            <ul>
+	                <li><a href='feeding.html'>VR艺术</a></li>
+	                <li><a href='tacking.html'>VR科学</a></li>
+	                <li><a href='disease.html'>VR人文</a></li>
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub1'><a href='skill.html'>分享VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='blog.html'>现实生活中的VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='game.html'>联系方式</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>简体中文</a>
+	            <ul>
+	                <li><a href='#'>简体中文</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
+</div>
+<div class="container">
+    <div class="container_box">
+        <div class="title_box">
+            <div class="title">
+                <h4>Kids and Horses: Where does it all start?</h4>
+            </div>
+        </div>
+        <div class="content1_box">
+            <div class="content1">
+                <div class="content1_img">
+                    <img src="image/blog3/1.jpg"/>
+                </div>
+                <p>I run the classic “kid” barn.  On any day after school, it’s hard to count how many kids are hanging out working with horses and just being kids.  Phones come out and snap a quick pic but devices are not occupying their time.  When I walk back to the barn in between lessons I often take a quick assessment of the flurry.  I see….kids helping kids…kids helping adults….kids helping each other….some kids scooping poop.  Kids come here to connect and to ride horses, lots of horses.</p>
+                <div class="content1_img">
+                    <img src="image/blog3/2.jpg"/>
+                </div>
+                <p>I hear my barn is unusual.  I’m sure to some in my circle, UNUSUAL means not fancy, not the best turnout, or not staffed with grooms.  At shows, I often hear my fellow trainers refer to things in our barn as my program (as in me, Kathy Slack).  Most days I head home at 9 pm and contemplate just what does my program mean to me.  Why do I stubbornly commit to the idea that kids need a barn where we spend long days just messing with horses.  Why do I want to work harder so my kids can learn more?  That is what it boils down to.  I really do believe it all starts here.</p>
+                <div class="content1_img">
+                    <img src="image/blog3/3.jpg"/>
+                </div>
+                <p>I have countless youth riders who have marched on to a national level of horse riding that make me proud.  I follow their journeys and consult with them when I need a little insight into what is happening at that level.  When we reconnect I am always flattered by their view of what has become important to them as they reminisce about their beginnings at BeeBeing Cave Riding Center.  What they tell me is priceless and worth all the long hours we spend to provide the place where it all started.</p>
+                <div class="content1_img">
+                    <img src="image/blog3/4.jpg"/>
+                </div>
+                <p>They tell me they are grateful for being able to ride many horses and often not in lessons.  I embrace rescuing thoroughbreds and buying cheap pony projects.  I am a horse collector to a fault and I certainly can’t ride them all.  I don’t think twice about who will ride the projects since I run a kid barn.  We safely dole out the responsibilities and somehow the kids get the work done.  They are trusted to use their skills, their brains and go figure it out.  These past students will tell me it all started here.</p>
+                <div class="content1_img">
+                    <img src="image/blog3/5.jpg"/>
+                </div>
+                <p>My past riders tell me they feel accomplished when they can give medications, use equipment correctly, and know about their horses’ care and management.  They even like that they know how to clean a stall.  I am not afraid to joke with them and reference some of the gnarly horses we rode back when they were young.  I am not afraid to point out what a simple environment they grew from as they glean about the good ‘ole days.  As they look forward to where their goals are taking them, they still look back and think about how it all started here.</p>
+                <div class="content1_img">
+                    <img src="image/blog3/6.jpg"/>
+                </div>
+                <p>Lowly can be a virtue when the hard work ethic and the love of a horse come together in such a place.  I grew up where the fancy barn in our neighborhood had a dusty, simple 50 X 80 indoor arena.  I loved working with the difficult horses because it gave me more horses to ride.  I’m like my former students, I cherish the memories of where it all started.  I appreciate and thank all of the people who provided the places where it all started for me.  Maybe it was your own parents, maybe it was an aunt or a special trainer? I’d love to know what it was like for you?  Where did it all start for you?  What do you remember the most?  One of my accomplished former students said the best thing I ever taught him was to “grab mane.”  It might be as simple as that to influence a successful career of jumping horses over hurdles.</p>
+                <p style="font-size:12px;color:gray;">From: https://ridinghorses.com/good-horse-riding-can-all-start-here/</p>
+            </div>
+        </div>
+        <div class="content2_box">
+            <!--评论-->
+            <div class="line"></div>
+            <h4>SAY SOMETHING</h4>
+            <div class="judge_box">
+
+                <p><input class="username" type="text" placeholder="username"/></p>
+                <p><textarea class="comment" placeholder="Say something......"></textarea></p>
+                <p>
+                    <button class="send" onclick="sendClick()">Send</button>
+                </p>
+            </div>
+            <div class="comment_box">
+                <h4 class="comment_num">COMMENT(0)</h4>
+
+                <!--                <div class="comment_list">-->
+                <!--                    <div class="comment_name">@Tom:</div>-->
+                <!--                    <br/>-->
+                <!--                    <div class="comment_detail">Amazing!</div>-->
+                <!--                    <br/>-->
+                <!--                    <div class="comment_time">2018/7/12 10:41</div>-->
+                <!--                    <div class="comment_line"></div>-->
+                <!--                </div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

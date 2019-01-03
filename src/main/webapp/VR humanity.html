@@ -1,0 +1,360 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <style type="text/css">
+    	img{
+    		display: inline-block;
+    		width: auto;
+    	}
+    	a{
+    		color: #333;
+    	}
+    </style>
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+		GET("pageName=About%20Us&sort=1", function(result){
+			var title = result['title'].split("|"),
+				cnContent = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result['cnContent'].replace(/\r\n/g,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"),
+				enContent = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result['enContent'].replace(/\r\n/g,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+			var cnTitle = title[1],
+				enTitle = title[0];
+			$(".right-desc p:eq(0)").attr("data-cn", cnTitle);
+			$(".right-desc p:eq(0)").attr("data-en", enTitle);
+			
+			
+			$(".right-desc p:eq(1)").attr("data-cn", cnContent);
+			$(".right-desc p:eq(1)").attr("data-en", enContent);
+			
+			var language = sessionStorage.getItem("language");
+			if(language == "en"){
+				$(".right-desc p:eq(0)").html( enTitle);
+				$(".right-desc p:eq(1)").html( enContent);
+			}else{
+				$(".right-desc p:eq(0)").html( cnTitle);
+				$(".right-desc p:eq(1)").html( cnContent);
+			}
+			
+		});
+		
+	});
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	               
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+
+<div style="width:1200px;margin: 30px auto;">
+
+<div lang=ZH-CN link=blue vlink="#954F72" style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h1><span lang=EN-US style='font-family:"Arial",sans-serif;font-size: 19pt;
+text-transform:uppercase'>SYRIAN REFUGEE CRISIS</span></h1>
+
+<p style='text-align: center;margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><span
+lang=EN-US><a href="http://www.vrse.com/watch/id/21/" style='box-sizing: inherit;
+box-shadow: currentcolor 0px 1px 0px 0px'></header><span style='font-family:
+"Open Sans",sans-serif;;text-decoration:none'><img border=0
+width=716 height=375 id="图片 3" src="VR%20humanity.files/image001.png"
+alt=sidra></span></a></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><strong
+style='box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#1A1A1A'>Quick Facts:</span></strong></p>
+
+<ul type=disc style='box-sizing: inherit;margin:2rem'>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>On-location
+     filming: Za’atri Camp, Jordan, December 2014</span></li>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>Release:
+     January 2015, World Economic Forum in Davos</span></li>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>Partners:
+     UN SDG Action Campaign, Vrse,&nbsp;UNICEF Jordan</span></li>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>SDG
+     16: Peace, Justice, and Strong Institutions</span></li>
+</ul>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#1A1A1A'>The
+Za’atari Refugee Camp in Jordan is home to over 80,000 Syrians fleeing war and
+violence. Half of these are children.&nbsp;<em style='box-sizing: inherit'><span
+style='font-family:"Open Sans",sans-serif'><a
+href="http://blog.myworld2015.org/2015/03/30/clouds-over-sidra/"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Clouds Over Sidra</span></a></span></em>&nbsp;is the
+story of a 12 year old girl who has lived there since the summer of 2013. The
+film follows her to school, to her makeshift tent and even to the football
+pitch.</span></p>
+
+<p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:center;
+background:white;box-sizing: inherit'><span lang=EN-US><a
+href="http://unvr.sdgactioncampaign.org/wp-content/uploads/2015/11/day2_un_0024_right_graded_0017355.jpg"><i><span
+style='font-family:"Open Sans",sans-serif;;text-decoration:none'><img
+border=0 width=601 height=338 id="图片 2" src="VR%20humanity.files/image002.jpg"
+alt="DAY2_UN_0024_RIGHT_graded_0017355"></span></i></a></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white'><em><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#1A1A1A'>ds Over
+Sidra</span></em><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#1A1A1A'>&nbsp;was initially created to support the United Nations
+Secretary-General’s MDG Advocacy Group’s call for partnerships to build
+resilience in vulnerable communities. It’s the first ever film shot in virtual
+reality for the UN, using the medium to generate greater empathy and new
+perspectives on people living in conditions of great vulnerability. Its&nbsp;powerful
+capacity to allow anyone on a global scale experience life within a refugee
+camp has the ability to inspire the message of hope among not only the millions
+displaced but also those motivated to act.</span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;background:white;box-sizing: inherit'><span lang=EN-US style='font-family:
+"Open Sans",sans-serif;color:#1A1A1A'>&nbsp;</span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;background:white;box-sizing: inherit'><span lang=EN-US style='font-family:
+"Open Sans",sans-serif;color:#1A1A1A'>The film premiered at the World Economic
+Forum in Davos, Switzerland with supporters including UN Secretary General Ban
+Ki-moon and Norwegian Prime Minister Erna Solberg among other dignitaries.
+Since then, it has been widely used to advance the UN’s advocacy for the Syrian
+crisis.&nbsp;It was screened at a high level donor meeting prior to the Third
+International Humanitarian Appeal for Syria in Kuwait in March 2015, which
+eventually raised 3.8 billion US dollars.&nbsp;The UNICEF education team has
+used it to showcase the need to support children’s education in crisis
+situations at important education forums in the lead up to the post-2015
+summit.</span></p>
+
+<figure class="size-full wp-image-115 aligncenter" style="box-sizing: inherit; display: block; margin: 0px auto 1.75em; clear: both;">
+
+<p class=MsoNormal align=center style='text-align:center;background:white'><span
+lang=EN-US><a
+href="http://unvr.sdgactioncampaign.org/wp-content/uploads/2015/11/unsg-quote1.png"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style='font-family:"Open Sans",sans-serif;;text-decoration:none'><img
+border=0 width=715 height=531 id="图片 1" src="VR%20humanity.files/image003.png"
+alt="UNSG quote"></span></a></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;background:white'><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#1A1A1A'>It has been translated it into 15 different languages and it is
+currently screening in 40 different countries by UNICEF face-to-face
+fundraisers. Preliminary evidence has shown that VR is twice as effective in
+raising funds.&nbsp;Various civil societies have used it to influence public
+opinion.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#1A1A1A'>The SDG
+Action Campaign is exploring opportunities to expand UNVR’s use as an
+educational tool. It has been used to discuss the Syrian Refugee Crisis&nbsp;in
+classrooms across the globe, including South Africa, Argentina and&nbsp;during
+a refugees workshop in their&nbsp;<a
+href="https://blog.myworld2015.org/2015/12/17/millennium-campaign-hosts-screening-of-clouds-over-sidra-for-woodside-intermediate-school-125-in-queens/"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Teen Thursdays Program</span></a>,&nbsp;a collaboration
+between the UN Group Programmes Unit, and the NYC Department of Education.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><em
+style='box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#1A1A1A'><a
+href="http://blog.myworld2015.org/2015/03/30/clouds-over-sidra/"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Clouds over Sidra</span></a></span></em><span lang=EN-US
+style='font-family:"Open Sans",sans-serif;color:#1A1A1A'>&nbsp;is a
+collaboration between the&nbsp;<a href="http://www.sdgactioncampaign.org/"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>UN SDG Action Campaign</span></a>,&nbsp;<a
+href="http://www.unicef.org/infobycountry/jordan.html" style='box-sizing: inherit;
+box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>UNICEF</span></a>&nbsp;<a
+href="http://www.unicef.org/infobycountry/jordan.html" style='box-sizing: inherit;
+box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>Jordan</span></a>,
+and Hollywood Production studio,&nbsp;<a href="http://vrse.works/"
+style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Vrse</span></a>, It was co-created by&nbsp;<a
+href="http://milk.co/" style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Chris Milk</span></a>&nbsp;and&nbsp;<a
+href="https://twitter.com/gaboarora" style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+style=''>Gabo Arora</span></a>. It is the recipient of
+the&nbsp;Interactive Award at the Sheffield International Doc/Fest.&nbsp;It was
+released on the VRSE application and iTunes and screened at the Sundance Film
+Festival, the Tribeca Film Festival, SXSW, the Museum of the Moving Image and
+countless UN forums and conferences.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;box-sizing: inherit'><strong
+style='box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#1A1A1A'>Social media:</span></strong><span lang=EN-US style='font-family:
+"Open Sans",sans-serif;color:#1A1A1A'>&nbsp; &nbsp;@mcampaign &nbsp;#UNVR
+&nbsp;#childrenofsyria &nbsp;#CloudsOverSidra</span></p>
+
+<ul type=disc style='box-sizing: inherit;margin:2rem'>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>I
+     just watched<a href="https://twitter.com/search?q=%23CloudsOverSidra"
+     style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+     style=''>#CloudsOverSidra</span></a>a new #UNVR&nbsp;film
+     about&nbsp;<a href="https://twitter.com/search?q=%23childrenofsyria"
+     style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+     style=''>#childrenofsyria</span></a>&nbsp;by&nbsp;<a
+     href="http://www.twitter.com/sdgaction" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>@sdgaction</span></a>&nbsp;<a
+     href="https://twitter.com/VRSEWORKS" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>@VRSEWORKS</span></a>&nbsp;<a
+     href="https://twitter.com/mcampaign" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>@UNICEFJordan</span></a></span></li>
+ <li class=MsoNormal style='color:#1A1A1A;text-align:left;background:white;
+     box-sizing: inherit'><span lang=EN-US style='font-family:"Open Sans",sans-serif'>I
+     just watched&nbsp;<a href="https://twitter.com/search?q=%23Cloudsoversidra"
+     style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><s
+     style='box-sizing: inherit'><span style=''>#</span></s><span
+     style=''>Cloudsoversidra</span></a>&nbsp;a&nbsp;<a
+     href="https://twitter.com/search?q=%23UNVR" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><s style='box-sizing: inherit'><span
+     style=''>#</span></s><span style=''>UNVR</span></a>&nbsp;abt&nbsp;<a
+     href="https://twitter.com/search?q=%23SyrianRefugees" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><s style='box-sizing: inherit'><span
+     style=''>#</span></s><span style=''>SyrianRefugees</span></a>&nbsp;<a
+     href="https://twitter.com/search?q=%23childrenofsyrial" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><s style='box-sizing: inherit'><span
+     style=''>#</span></s><span style=''>childrenofsyrial</span></a>.
+     Visit&nbsp;<a
+     href="https://unitednationsvirtualreality.wordpress.com/virtual-reality/cloudsoversidra/"
+     style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><span
+     style=''>https://unitednationsvirtualreality.wordpress.com/virtual-reality/cloudsoversidra/</span></a><a
+     href="http://www.twitter.com/sdgaction" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><span style=''>@sdgaction</span></a>&nbsp;<a
+     href="https://twitter.com/uinicefjordan" style='box-sizing: inherit;
+     box-shadow: currentcolor 0px 1px 0px 0px'><s style='box-sizing: inherit'><span
+     style=''>@</span></s><span style=''>uinicefjordan</span></a>&nbsp;<a
+     href="https://twitter.com/vrse" style='box-sizing: inherit;box-shadow: currentcolor 0px 1px 0px 0px'><s
+     style='box-sizing: inherit'><span style=''>@</span></s><span
+     style=''>vrse</span></a></span></li>
+</ul>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</div>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE><html>
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1   " />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript">
+    	
+    </script>
+</head>
+<script type="text/javascript">
+	$(function(){
+		//获取aboutUs中的数据
+		GET("pageName=About%20Us&sort=1", function(result){
+			var title = result['title'].split("|"),
+				cnContent = result['cnContent'].replace(/\r\n/g,"<br>"),
+				enContent = result['enContent'].replace(/\r\n/g,"<br>");
+			var cnTitle = title[1],
+				enTitle = title[0];
+			$(".about-us h1").attr("data-cn", cnTitle);
+			$(".about-us h1").attr("data-en", enTitle);
+			
+			
+			$(".about-us .desc").attr("data-cn", cnContent);
+			$(".about-us .desc").attr("data-en", enContent);
+			var language = sessionStorage.getItem("language");
+			if(language == "en"){
+				$(".about-us h1").html(enTitle);
+				$(".about-us .desc").html(enContent);
+				
+			}else{
+				$(".about-us h1").html(cnTitle);
+				$(".about-us .desc").html(cnContent);
+			}
+		});
+	});
+</script>
+
+<!--logo-->
+<div class="logo_box">
+<div class="logo">
+    <a href='index.html'>
+    	<img src="image/logo.png"/>
+    	<!--My Future Classroom-->
+    </a>
+    <div class="lang">
+    	<!--<div class="item"><img src="image/chinese.jpg"/></div>-->
+    	<div class="item"><img id="langImg" data-text="中文简体" src="image/english.jpg"/></div>
+    </div>
+</div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'>
+	        	<a href='index.html' 
+	        		data-cn="关于我们"
+	        		data-en="About us">关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='whatIs.html' 
+	        		data-cn="VR, AR, MR"
+	        		data-en="VR, AR, MR">VR, AR, MR</a>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="VR的具体运用"
+	        		data-en="VR application in Education">VR的具体运用</a>
+	            <ul>
+	                <li>
+	                	<a href='art.html'
+	                		data-cn="VR艺术"
+	                		data-en="VR ART">VR艺术</a></li>
+	                <li>
+	                	<a href='Science.html'
+	                		data-cn="VR科学"
+	                		data-en="VR science">VR科学</a></li>
+	                <li>
+	                	<a href='VR humanity.html'
+	                		data-cn="VR人文"
+	                		data-en="VR humanities">VR人文</a></li>
+	                
+	               
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub'>
+	        	<a href=''
+	        		data-cn="我的VR项目"
+	        		data-en="My VR projects">我的VR项目</a>
+	        	<ul>
+	                <li>
+	                	<a href='lifeVr.html'
+	                		data-cn="我校虚拟现实之旅"
+	                		data-en="VR tour of our school">我校虚拟现实之旅</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr2.html'
+	                		data-cn="我的VR Lab"
+	                		data-en="My VR Lab">我的VR Lab</a>
+	                </li>
+	                <li>
+	                	<a href='lifeVr3.html'
+	                		data-cn="360度钢琴表演"
+	                		data-en="360 view of Piano Performance">360度钢琴表演</a>
+	                </li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub'>
+	        	<a href='#'
+	        		data-cn="虚拟现实探索"
+	        		data-en="VR Explorations">虚拟现实探索</a>
+	        	<ul>
+	                <li>
+	                	<a href='Top5VRapps.html'
+	                		data-cn="TOP 5 VR TOOLS"
+	                		data-en="TOP 5 VR TOOLS">TOP 5 VR TOOLS</a></li>
+	                <li>
+	                	<a href='Top10VRmovies.html'
+	                		data-cn="Top 10 VR movies"
+	                		data-en="Top 10 VR movies">Top 10 VR movies</a></li>
+	                <li>
+	                	<a href='LatestTech.html'
+	                		data-cn="Latest VR technology"
+	                		data-en="Latest VR technology">Latest VR technology</a></li>
+	            </ul>
+	        </li>
+	        <li class='nav-has-sub1'>
+	        	<a href='concatUs.html'
+		        	data-en="Contact us"
+		        	data-cn="联系方式">联系方式</a>
+	        </li>
+	        <!--<li class='nav-has-sub'><a href='#'
+	        	data-en="English"
+	        	data-cn="中文简体">中文简体</a>
+	            <ul>
+	                <li><a href='#'>中文简体</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>-->
+	    </ul>
+	</div>
+</div>
+
+
+
+<div lang=ZH-CN link=blue
+	class="hum"
+	 vlink="#954F72" style='margin-top: 40px;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span lang=EN-US>From: <a
+href="https://www.vrcircle.com/end-space-coming-to-oculus-rift-january-25th/">https://www.vrcircle.com/end-space-coming-to-oculus-rift-january-25th/</a></span></p>
+
+<div style='mso-element:para-border-div;border:none #FCD665 1.0pt;border-left:
+solid #FCD665 4.5pt;mso-border-alt:none #FCD665 0cm;mso-border-left-alt:solid #FCD665 4.5pt;
+padding:0cm 0cm 0cm 7.0pt;background:#F6F6F6'>
+
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:15.0pt;margin-left:
+0cm;mso-line-height-alt:1.05pt;mso-pagination:widow-orphan;background:#F6F6F6;
+vertical-align:baseline;border:none;mso-border-alt:none #FCD665 0cm;mso-border-left-alt:
+solid #FCD665 4.5pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 7.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Roboto Condensed";mso-fareast-font-family:
+"Roboto Condensed";mso-bidi-font-family:"Roboto Condensed";color:black;
+text-transform:uppercase;background:#F6F6F6'>FULL ARTICLE</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Roboto Condensed";mso-fareast-font-family:
+"Roboto Condensed";mso-bidi-font-family:"Roboto Condensed";color:black;
+text-transform:uppercase'><o:p></o:p></span></h3>
+
+</div>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US>The
+wildly successful End Space VR on the Gear VR is coming to the Oculus Rift tomorrow,
+January 25th, and the HTC Vive in February. End Space may not have the top-end
+graphics of the likes of Eve: Valkyrie, however, the game is priced at only
+$14.99 and is a fantastic space combat game for a bargain price!</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US>End Space
+VR lets you take command of the most advanced starfighter the United Trade
+Consortium as you battle for control of the Tartarus sector. Protect the UTC’s
+secret jump-drive technology from the Tartarus Liberation Front insurgents as
+you fight to maintain the corporation’s dominance and earn yourself fame and
+fortune in the process. Taking full advantage of VR, you can track targets with
+your gaze and blast them with your Pulse Lasers or lock on and pound them into
+space dust with your Meteor Missiles. As you progress in the game, unlock new
+weapons and upgrades as you move through the ranks by taking on increasingly
+daring missions.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='color:black'><a
+href="https://www.oculus.com/experiences/rift/1831097756902013/"><span
+style='color:black;text-decoration:none;text-underline:none'>End Space VR on
+the Oculus Store $14.99</span></a></span></b></p>
+
+<h3 style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US
+style='font-size:18.0pt;font-family:"Roboto Condensed";mso-fareast-font-family:
+"Roboto Condensed";mso-bidi-font-family:"Roboto Condensed";color:black'>Features
+currently in development<o:p></o:p></span></h3>
+
+<p class=MsoNormal style='margin-left:18.8pt;text-indent:-18.0pt;mso-line-height-alt:
+1.2pt;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;tab-stops:36.0pt;
+vertical-align:baseline'><![if !supportLists]><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:12.0pt'>HTC
+Vive, and Google Daydream support</span></p>
+
+<p class=MsoNormal style='margin-left:18.8pt;text-indent:-18.0pt;mso-line-height-alt:
+1.2pt;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;tab-stops:36.0pt;
+vertical-align:baseline'><![if !supportLists]><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:12.0pt'>Multiplayer</span></p>
+
+<p class=MsoNormal style='margin-left:18.8pt;text-indent:-18.0pt;mso-line-height-alt:
+1.2pt;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;tab-stops:36.0pt;
+vertical-align:baseline'><![if !supportLists]><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:12.0pt'>More
+missions</span></p>
+
+<p class=MsoNormal style='margin-left:18.8pt;text-indent:-18.0pt;mso-line-height-alt:
+1.2pt;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;tab-stops:36.0pt;
+vertical-align:baseline'><![if !supportLists]><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:12.0pt'>More
+weapons</span></p>
+
+<p class=MsoNormal style='margin-left:18.8pt;text-indent:-18.0pt;mso-line-height-alt:
+1.2pt;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;tab-stops:36.0pt;
+vertical-align:baseline'><![if !supportLists]><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:12.0pt'>3rd
+person camera mode</span></p>
+
+<h3 style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US
+style='font-size:18.0pt;font-family:"Roboto Condensed";mso-fareast-font-family:
+"Roboto Condensed";mso-bidi-font-family:"Roboto Condensed";color:black'>History
+of the End Space Development<o:p></o:p></span></h3>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US>Justin
+Wasilenko originally developed End Space, a wild-land forest firefighter,
+turned independent game developer. End Space VR for Cardboard was the first
+game he ever developed. He started working on End Space VR for Cardboard in
+February 2015 as a side project after a Christmas visit with his brother who
+demoed an early game he built using Unity and showed off his pizza box turned
+into a Google Cardboard.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US>Encouraged
+by its critical success on Google Cardboard he started working on a new game
+simply named ‘End Space’ to launch on Gear VR. End Space VR for Cardboard was
+later renamed to Minos Spacefighter to try and avoid confusion between the two
+games.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;mso-line-height-alt:1.2pt;
+mso-pagination:widow-orphan;vertical-align:baseline'><span lang=EN-US>End Space
+on the Gear VR has been a massive success earning top ratings and has been on
+Oculus’ best selling list numerous times. Thanks to the success of End Space on
+the Gear VR, Justin formed a company called Orange Bridge Studios with his
+brother Lee. Justin and Lee continue developing End Space improving the game
+and bringing it to all other VR platforms.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+
+</div>
+
+
+</body>
+
+
+</html>

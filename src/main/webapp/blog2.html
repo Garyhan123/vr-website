@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <link rel="stylesheet" type="text/css" href="css/blog2.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<script type="text/javascript">
+
+    <?php
+    $mysqli = new mysqli();
+    $mysqli->connect('localhost', 'root', '');
+    $mysqli->select_db('wikihorse');
+    $mysqli->set_charset("UTF8");
+
+    $sql = " select * from comment where blog='blog2' ";//修改blog
+    $result = $mysqli->query($sql);
+    $username = array();
+    $comment = array();
+    $time = array();
+    $commentNum = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+        $username[] = $row['username'];
+        $comment[] = $row['content'];
+        $time[] = $row['time'];
+        $commentNum++;
+    }
+    $usernameJson = json_encode($username);
+    $commentJson = json_encode($comment);
+    $timeJson = json_encode($time);
+    $commentNumJson = json_encode($commentNum);
+    ?>
+
+    username_json = <?php echo $usernameJson;?>;
+    comment_json = <?php echo $commentJson;?>;
+    time_json = <?php echo $timeJson;?>;
+    commentNum =<?php echo $commentNum;?>;
+
+    $(
+        function () {
+
+            $('.comment_num').text("COMMENT("+commentNum+")");
+            for(var i=0;i<commentNum;i++) {
+                $('.comment_box').append('<div class="comment_list">' +
+                    '<div class="comment_name">@'+username_json[i]+':</div><br/>' +
+                    '<div class="comment_detail">'+comment_json[i]+'</div><br/>' +
+                    '<div class="comment_time">'+time_json[i]+'</div>' +
+                    '</div><div class="comment_line"></div>');
+            }
+        }
+    );
+
+
+    function sendClick() {
+        if ($('.username').val() == "" || $('.comment').val() == "")
+            alert("Username or comment can not be empty");
+        else {
+            $.ajax({
+                type: 'GET',
+                url: "insertComment.html",
+                data: {
+                    username: $('.username').val(),
+                    comment: $('.comment').val(),
+                    blog: "blog2"//修改blog
+                }
+            });
+
+            alert("Comment Success");
+            window.location.reload();
+            $('.username').val("");
+            $('.comment').val("");
+        }
+
+    }
+
+</script>
+<body>
+<!--logo-->
+<div class="logo_box">
+    <div class="logo">
+        <a href='index.html'>My Future Classroom</a>
+    </div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'><a href='index.html'>关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='#'>什么是VR, AR, MR?</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>VR的具体运用</a>
+	            <ul>
+	                <li><a href='feeding.html'>VR艺术</a></li>
+	                <li><a href='tacking.html'>VR科学</a></li>
+	                <li><a href='disease.html'>VR人文</a></li>
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub1'><a href='skill.html'>分享VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='blog.html'>现实生活中的VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='game.html'>联系方式</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>简体中文</a>
+	            <ul>
+	                <li><a href='#'>简体中文</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
+</div>
+<div class="container">
+    <div class="container_box">
+        <div class="title_box">
+            <div class="title">
+                <h4>Trailering South For The Winter</h4>
+            </div>
+        </div>
+        <div class="content1_box">
+            <div class="content1">
+                <p>When I shivered during my rides in a frigid indoor ring during January, my thoughts were focused on heading south to Florida at the end of that month. The trip with five horses—the most I’ve ever taken down here--was about a lot more than the weather.</p>
+                <p>Of course, it helps if the temperatures are balmy. I can let the horses relax on the trails and turnout in the sunshine doesn’t involve dealing with heavy blankets.</p>
+                <p>But even more important, it’s a great opportunity for me to get some first- class training from Olympic and world championships veteran Adrienne Lyle, whose barn is just a few short minutes from the stalls I rent at Ariane Vasquez’s lovely Hidden Road Stables.</p>
+                <p>The Adequan Global Dressage Festival also offers an opportunity to compete against accomplished riders and give my horses the kind of mileage they can’t get at home. Everyone is here—you name them, they’re in Wellington for the winter.</p>
+                <p>While my friends already were down here weeks before I arrived, I always go at the end of January because I just can't afford to spend the whole season in Wellington. So I make the most of the time that I can be here.</p>
+                <p>I have an incredible group of horses this year, and I am really excited to get back in the show ring. My last competition was in November, at the U.S. Finals in Kentucky. That was where I showed another of my homebreds, six-year-old Fauna, who is now owned by Amy Price, in the Fourth Level Open Finals. She finished sixth in the country at Fourth Level, showing in the freezing cold.</p>
+                <p>Last weekend, I showed her in the Open Prix St. Georges against the likes of U.S. Dressage Federation President George Williams and was thrilled to tie with him for seventh place in a class with 19 entries.</p>
+                <p>Faolan, meanwhile, is moving up to the Intermediaire II. And I'm really excited to bring out my coming five year old, Fidelity, a full sister to Fauna who doesn’t look anything like her. Fauna is grey; Fidelity is black (though she looks dark bay when clipped) and still growing at nearly 17 hands.</p>
+                <p>I started her last year when I got home from Florida, and had hoped to get her out late last year, but it just never happened. I like to bring my horses to a small local schooling show in New Jersey for their first outing, but it wasn’t in the cards for 2017. Fauna also had never been to a show at Fidelity's age, and I took her to Florida that season as well.</p>
+                <p>After settling in, I brought her to the White Fences schooling show in Loxahatchee, about 20 minutes or so from Wellington for her first outing, and then she started showing at Global.</p>
+                <p>Fauna took it all in stride and came back from that first season having really grown up. My hope is the same for Fidelity. It doesn't look like there will be any opportunities to enter her in schooling shows this season, but my plan is to take her to the shows anyway just to school and get in the show rings as a start.</p>
+                <div class="content1_img">
+                    <img src="image/blog2/1.jpg"/>
+                </div>
+                <p>I really feel that the best way for them to grow up and see the world is simply to bring them along with me. When I take them out of their home environment, which for most of my horses is the farm where they were foaled, they rely strongly on me for their comfort.</p>
+                <p>It really helps them to look to me for that support and trust. I find that this creates a deeper relationship and strengthens my bond with them, which is important for the training.</p>
+                <p>Since the environment and shows in Florida have so much to stimulate my horses and lots for them to look at, they come to develop a greater trust in me and then go out and do their jobs. Hopefully, Fidelity will follow in the hoofprints of her siblings and benefit from the opportunities in Florida.</p>
+                <div class="content1_img">
+                    <img src="image/blog2/2.jpg"/>
+                </div>
+                <p>I’m also in charge of two other horses, Rhi (who shows as Renaissance) and Tiko. I can’t thank my mother, Barbara Hay, enough for coming down with me to help get us all set up. </p>
+                <p style="font-size:12px;color:gray;">From: https://www.equisearch.com/blog/trailering-south-for-the-winter</p>
+            </div>
+        </div>
+        <div class="content2_box">
+            <!--评论-->
+            <div class="line"></div>
+            <h4>SAY SOMETHING</h4>
+            <div class="judge_box">
+
+                <p><input class="username" type="text" placeholder="username"/></p>
+                <p><textarea class="comment" placeholder="Say something......"></textarea></p>
+                <p>
+                    <button class="send" onclick="sendClick()">Send</button>
+                </p>
+            </div>
+            <div class="comment_box">
+                <h4 class="comment_num">COMMENT(0)</h4>
+
+                <!--                <div class="comment_list">-->
+                <!--                    <div class="comment_name">@Tom:</div>-->
+                <!--                    <br/>-->
+                <!--                    <div class="comment_detail">Amazing!</div>-->
+                <!--                    <br/>-->
+                <!--                    <div class="comment_time">2018/7/12 10:41</div>-->
+                <!--                    <div class="comment_line"></div>-->
+                <!--                </div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

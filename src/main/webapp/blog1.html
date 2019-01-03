@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My future classroom</title>
+    <link rel="stylesheet" type="text/css" href="css/blog1.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<script type="text/javascript">
+
+    <?php
+    $mysqli = new mysqli();
+    $mysqli->connect('localhost', 'root', '');
+    $mysqli->select_db('wikihorse');
+    $mysqli->set_charset("UTF8");
+
+    $sql = " select * from comment where blog='blog1' ";//修改blog
+    $result = $mysqli->query($sql);
+    $username = array();
+    $comment = array();
+    $time = array();
+    $commentNum = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+        $username[] = $row['username'];
+        $comment[] = $row['content'];
+        $time[] = $row['time'];
+        $commentNum++;
+    }
+    $usernameJson = json_encode($username);
+    $commentJson = json_encode($comment);
+    $timeJson = json_encode($time);
+    $commentNumJson = json_encode($commentNum);
+    ?>
+
+    username_json = <?php echo $usernameJson;?>;
+    comment_json = <?php echo $commentJson;?>;
+    time_json = <?php echo $timeJson;?>;
+    commentNum =<?php echo $commentNum;?>;
+
+    $(
+        function () {
+
+            $('.comment_num').text("COMMENT("+commentNum+")");
+            for(var i=0;i<commentNum;i++) {
+                $('.comment_box').append('<div class="comment_list">' +
+                    '<div class="comment_name">@'+username_json[i]+':</div><br/>' +
+                    '<div class="comment_detail">'+comment_json[i]+'</div><br/>' +
+                    '<div class="comment_time">'+time_json[i]+'</div>' +
+                    '</div><div class="comment_line"></div>');
+            }
+        }
+    );
+
+
+    function sendClick() {
+        if ($('.username').val() == "" || $('.comment').val() == "")
+            alert("Username or comment can not be empty");
+        else {
+            $.ajax({
+                type: 'GET',
+                url: "insertComment.html",
+                data: {
+                    username: $('.username').val(),
+                    comment: $('.comment').val(),
+                    blog: "blog1"//修改blog
+                }
+            });
+
+            alert("Comment Success");
+            window.location.reload();
+            $('.username').val("");
+            $('.comment').val("");
+        }
+
+    }
+
+</script>
+
+
+
+<body>
+<!--logo-->
+<div class="logo_box">
+    <div class="logo">
+        <a href='index.html'>My Future Classroom</a>
+    </div>
+</div>
+
+
+<!--<导航栏>-->
+<div class="menu">
+    <div class="nav_menu3">
+	    <ul>
+	        <li class='nav-has-sub1'><a href='index.html'>关于我们</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='#'>什么是VR, AR, MR?</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>VR的具体运用</a>
+	            <ul>
+	                <li><a href='feeding.html'>VR艺术</a></li>
+	                <li><a href='tacking.html'>VR科学</a></li>
+	                <li><a href='disease.html'>VR人文</a></li>
+	            </ul>
+	        </li>
+	
+	        <li class='nav-has-sub1'><a href='skill.html'>分享VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='blog.html'>现实生活中的VR</a>
+	        </li>
+	        <li class='nav-has-sub1'><a href='game.html'>联系方式</a>
+	        </li>
+	        <li class='nav-has-sub'><a href='#'>简体中文</a>
+	            <ul>
+	                <li><a href='#'>简体中文</a></li>
+	                <li><a href='#'>English</a></li>
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
+</div>
+<div class="container">
+    <div class="container_box">
+        <div class="title_box">
+            <div class="title">
+                <h4>She came, she showed and she conquered!</h4>
+            </div>
+        </div>
+        <div class="content1_box">
+            <div class="content1">
+                <p>When I was younger, it was always such a thrill to go to Dressage at Devon on Saturday night and
+                    watch the Grand Prix Freestyles, which are almost always performed in front of a sold-out crowd.
+                    Those Devon fans, known for cheering and really getting into it, are a huge part of what makes this
+                    show on Philadelphia’s Main Line so special.</p>
+                <p>There truly is no show like Dressage at Devon. It was always my dream to show there, and I’ve never
+                    been disappointed since I started competing at this iconic venue, where everything except the arena
+                    fences is painted that special shade of “Devon blue.”</p>
+                <p>
+                <div class="content1_img">
+                    <img src="image/blog1/1.jpg"/>
+                </div>
+                <p>This year was the first time I ever rode a freestyle there. My freestyle is extra special, because it
+                    was created as a tribute to my horse of a lifetime, Fitzhessen (Freestyle X Florestan).</p>
+                <p>Fitz was my best friend and “heart horse,” the full brother to my current ride, Faolan. Three years
+                    ago, I lost my Fitz after he contracted laminitis and nothing we did could make him better, so we
+                    let him go. Our freestyle trot tour is to Pink's song, "Who Knew", which is a song about losing a
+                    beloved friend.</p>
+                <p>It can be a quite emotional part of the freestyle for my mother and anyone who knows our story, when
+                    we hit the diagonal in our extended trot and Pink's vocal comes on: "If someone said three years
+                    from now you'd be long gone…Who knew?"</p>
+                <p>When I competed Fitz in our first CDI at Devon, back in 2012, it truly was a dream come true. Life
+                    goes on, and Faolan has really blossomed into a horse beyond my wildest dreams. At just eight years
+                    old, this stallion already has far surpassed where his older brother left off.</p>
+                <p>Showing at Devon is always a blast, because so many people come to watch that it feels as if we're
+                    showing in front of a hometown crowd, since we live just across the Pennsylvania state line in New
+                    Jersey. Everywhere you go at Devon, you run into people that you know. To top it all off, it
+                    actually was uncharacteristically sunny this year, with no rain.</p>
+                <p>The best part, of course, was the fact that both of my homebred horses did well at Devon. Faolan
+                    produced one of our best CDI Small Tour results so far. He finished in third place in the
+                    Intermediaire I with a 68.991 percent. The following day, he was sixth in the I-1 Freestyle with
+                    another 68. He's continued to get stronger as the year goes on.</p>
+                <div class="content1_img">
+                    <img src="image/blog1/2.jpg"/>
+                </div>
+                <p>Fauna, my other Devon ride, was second and third in the FEI 6-year-old classes. I also showed her in
+                    an open Fourth Level class, where she tied for fourth, and ended up fifth against some very nice
+                    horses in a rather large class.</p>
+                <p>Even though I sold Fauna in the spring, I've been fortunate enough to keep her in training, and
+                    continue to compete all year without skipping a beat. She qualified and competed at the U.S. Young
+                    Horse Championships during the summer at Lamplight Equestrian Center in Illinois, where she finished
+                    sixth among the country's six-year-olds.</p>
+                <p>From there, she went to the Region 8 Championships, where I rode her in both the Third- and
+                    Fourth-Level Open Championships. She earned a wild card Invitation to next month’s U.S. Finals in
+                    Kentucky after the Region 8 Open Fourth Level Championships, where she placed fourth, earning more
+                    than 68 percent.</p>
+                <p>I opted to compete Faolan in the CDI in Saugerties, N.Y., instead of regional qualifying
+                    championships for the U.S. Finals. I decided that he didn't need to go to Kentucky, since he went
+                    the last two years. I would rather focus on his training and development this fall instead of going
+                    to one more show.</p>
+                <p>I'll be spending the next few weeks getting ready to wrap up a memorable 2017 show season in
+                    Kentucky, so wish me luck!</p>
+                <p style="font-size:12px;color:gray;">From: https://www.equisearch.com/blog/came-showed-conquered</p>
+
+            </div>
+        </div>
+
+
+        <div class="content2_box">
+            <!--评论-->
+            <div class="line"></div>
+            <h4>SAY SOMETHING</h4>
+            <div class="judge_box">
+
+                <p><input class="username" type="text" placeholder="username"/></p>
+                <p><textarea class="comment" placeholder="Say something......"></textarea></p>
+                <p>
+                    <button class="send" onclick="sendClick()">Send</button>
+                </p>
+            </div>
+            <div class="comment_box">
+                <h4 class="comment_num">COMMENT(0)</h4>
+
+<!--                <div class="comment_list">-->
+<!--                    <div class="comment_name">@Tom:</div>-->
+<!--                    <br/>-->
+<!--                    <div class="comment_detail">Amazing!</div>-->
+<!--                    <br/>-->
+<!--                    <div class="comment_time">2018/7/12 10:41</div>-->
+<!--                    <div class="comment_line"></div>-->
+<!--                </div>-->
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

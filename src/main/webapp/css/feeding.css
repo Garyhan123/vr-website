@@ -1,0 +1,446 @@
+.title
+{
+    height: 25px;
+    width: 1200px;
+    border-bottom: 1px solid lightgray
+}
+h4
+{
+    background-color: lightgray;
+    width: 100px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.logo a{
+	color: #333;
+	line-height: 99px;
+	font-size: 30px;
+	padding-left: 15px;
+}
+a{
+	text-decoration: none;
+}
+.container
+{
+    width: 100%;
+    margin-top: 35px;
+}
+.container_box
+{
+    width: 1200px;
+    margin: 0 auto;
+}
+.content1,.content2,.content3,.content4,.content5,.content6,.content7,.content8,.content9,.content10,.content11,.content12,.content13,.content14,.content15
+{
+
+   margin: 0 50px;
+}
+.content1_box,.content2_box,.content3_box,.content4_box,.content5_box,.content6_box,.content7_box,.content8_box,.content9_box,.content10_box,.content11_box,.content12_box,.content13_box,.content14_box,.content15_box
+{
+    margin:50px auto;
+    width: 1050px;
+    position: relative;
+}
+.content1_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content1_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content1_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.title_box
+{
+    height: 50px;
+}
+h2
+{
+    margin: 35px 0;
+    text-align: center;
+    color: #3c5194;
+}
+body
+{
+    background-color: #EEE9E9;
+    margin-left:0;
+    margin-right:0;
+}
+.content1_left p span
+{
+    font-size: 40px;
+}
+
+.content2_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content2_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content2_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content2_right p span
+{
+    font-size: 40px;
+}
+
+.content3_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content3_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content3_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content3_left p span
+{
+    font-size: 40px;
+}
+
+.content4_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content4_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content4_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content4_right p span
+{
+    font-size: 40px;
+}
+
+.content5_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content5_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content5_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content5_left p span
+{
+    font-size: 40px;
+}
+.content6_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content6_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content6_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content6_right p span
+{
+    font-size: 40px;
+}
+
+.content7_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content7_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content7_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content7_left p span
+{
+    font-size: 40px;
+}
+
+.content8_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content8_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content8_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content8_right p span
+{
+    font-size: 40px;
+}
+
+.content9_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content9_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content9_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content9_left p span
+{
+    font-size: 40px;
+}
+
+.content10_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content10_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content10_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content10_right p span
+{
+    font-size: 40px;
+}
+
+.content11_left
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: left;
+}
+.content11_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content11_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content11_left p span
+{
+    font-size: 40px;
+}
+
+.content12_right
+{
+    line-height: 35px;
+    width: 500px;
+
+    float: right;
+}
+.content12_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content12_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content12_right p span
+{
+    font-size: 40px;
+}
+
+.content13_left
+{
+    line-height: 35px;
+    width: 500px;
+    float: left;
+}
+.content13_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content13_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content13_left p span
+{
+    font-size: 40px;
+}
+
+.content14_right
+{
+    line-height: 35px;
+    width: 500px;
+    float: right;
+}
+.content14_left
+{
+    width: 350px;
+
+    float: left;
+}
+.content14_left img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content14_right p span
+{
+    font-size: 40px;
+}
+
+.content15_left
+{
+    line-height: 35px;
+    width: 500px;
+    float: left;
+}
+.content15_right
+{
+    width: 350px;
+
+    float: right;
+}
+.content15_right img
+{
+    width: 350px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+.content15_left p span
+{
+    font-size: 40px;
+}
